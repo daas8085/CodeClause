@@ -3,14 +3,13 @@
 Project Details: 
 
 Sr.No      Project Name
- 1-	      Folder Locker
- 2-	      Timer and Stopwatch
+ : 1-	      Folder Locker
+ : 2-	      Timer and Stopwatch
 
-Golden Projects (Not Compulsory):
-
+Golden Projects
 Sr.No      Project Name
- 1-	    Music Streaming Application
- 2-	    Integrate Payment Gateway
+ : 1-	    Music Streaming Application
+ : 2-	    Integrate Payment Gateway
 
 Software Requirements:
     IDE- Eclipse/Netbeans/VS Code/Intellij IDEA etc.
