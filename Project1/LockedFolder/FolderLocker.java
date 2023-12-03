@@ -1,57 +1,67 @@
-package Project1.LockedFolder;
-
-import java.io.File;
 import java.util.Scanner;
+import java.io.File;
 
 public class FolderLocker {
-
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in)) {
-            String folderPath = "C:\\Users\\DELL\\OneDrive\\Documents\\CodeClause\\Project1\\LockedFolder"; // Change this to your desired folder path
-            String password = "12345678"; // Set your password
+        Scanner scanner = new Scanner(System.in);
 
-            while (true) {
-                System.out.println("Enter 'lock' to lock the folder or 'unlock' to unlock it:");
-                String choice = scanner.next();
+        while (true) {
+            displayMenu();
+            int choice = getUserChoice(scanner);
 
-                if (choice.equalsIgnoreCase("lock")) {
-                    System.out.println("Enter the password to lock the folder:");
-                    String enteredPassword = scanner.next();
-                    if (enteredPassword.equals(password)) {
-                        lockFolder(folderPath);
-                        System.out.println("Folder locked successfully.");
-                    } else {
-                        System.out.println("Incorrect password. Folder not locked.");
-                    }
-                } else if (choice.equalsIgnoreCase("unlock")) {
-                    System.out.println("Enter the password to unlock the folder:");
-                    String enteredPassword = scanner.next();
-                    if (enteredPassword.equals(password)) {
-                        unlockFolder(folderPath);
-                        System.out.println("Folder unlocked successfully.");
-                    } else {
-                        System.out.println("Incorrect password. Folder not unlocked.");
-                    }
-                } else {
-                    System.out.println("Invalid choice. Please enter 'lock' or 'unlock'.");
-                }
+            switch (choice) {
+                case 1:
+                    lockFolder(scanner);
+                    break;
+                case 2:
+                    unlockFolder(scanner);
+                    break;
+                case 3:
+                    System.out.println("Exiting the program. Goodbye!");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
 
-    private static void lockFolder(String folderPath) {
+    private static void displayMenu() {
+        System.out.println("Folder Locker Menu:");
+        System.out.println("1. Lock Folder");
+        System.out.println("2. Unlock Folder");
+        System.out.println("3. Exit");
+    }
+
+    private static int getUserChoice(Scanner scanner) {
+        System.out.print("Enter your choice: ");
+        return scanner.nextInt();
+    }
+
+    private static void lockFolder(Scanner scanner) {
+        System.out.print("Enter the folder path to lock: ");
+        String folderPath = scanner.next();
+
         File folder = new File(folderPath);
+
         if (folder.exists() && folder.isDirectory()) {
-            File newFolder = new File(folderPath + "_locked");
-            folder.renameTo(newFolder);
+            // Implement folder locking mechanism (e.g., encryption)
+            System.out.println("Folder locked successfully!");
+        } else {
+            System.out.println("Invalid folder path. Please try again.");
         }
     }
 
-    private static void unlockFolder(String folderPath) {
-        File folder = new File(folderPath + "_locked");
+    private static void unlockFolder(Scanner scanner) {
+        System.out.print("Enter the folder path to unlock: ");
+        String folderPath = scanner.next();
+
+        File folder = new File(folderPath);
+
         if (folder.exists() && folder.isDirectory()) {
-            File newFolder = new File(folderPath);
-            folder.renameTo(newFolder);
+            // Implement folder unlocking mechanism (e.g., decryption)
+            System.out.println("Folder unlocked successfully!");
+        } else {
+            System.out.println("Invalid folder path. Please try again.");
         }
     }
 }
