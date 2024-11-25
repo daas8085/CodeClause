@@ -2,7 +2,9 @@
 
 ## Project Details: 
 
-Sr.No      Project Name
+Sr.No
+      Project Name
+
  : 1-	      Folder Locker
    2-	      Timer and Stopwatch
 
