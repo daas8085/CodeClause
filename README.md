@@ -11,10 +11,10 @@ Sr.No.     Project Name :
 Sr.No      Project Name: 
 
 
-   **1-	    Music Streaming Application**
+   **1.	        Music Streaming Application**
 
 
-   **2-	    Integrate Payment Gateway**
+   **2.	        Integrate Payment Gateway**
 
 ## Software Requirements:
     IDE- Eclipse/Netbeans/VS Code/Intellij IDEA etc.
