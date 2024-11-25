@@ -8,10 +8,9 @@ Sr.No.     Project Name :
    2-	      Timer and Stopwatch
 
 ## Golden Projects
-Sr.No      Project Name <br>
-
- : 1-	    Music Streaming Application
-   2-	    Integrate Payment Gateway
+Sr.No      Project Name: 
+   **1-	    Music Streaming Application**
+   **2-	    Integrate Payment Gateway**
 
 ## Software Requirements:
     IDE- Eclipse/Netbeans/VS Code/Intellij IDEA etc.
